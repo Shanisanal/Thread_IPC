@@ -12,6 +12,7 @@
 //***************************************************************************** 
 
 //******************************* Include Files *******************************
+#include "Common.h"
 
 //******************************* Local Types ********************************* 
  
@@ -31,15 +32,15 @@
 int main()
 {
     int lReturnCode = 0;
-/*     bool blStatus = true;
+    bool blStatus = true;
 
-    blStatus = ThreadHandlerRun();
+//    blStatus = ThreadServiceRun();
 
     if(false == blStatus)
     {
         printf("Critical Error: Thread execution failed.\n");
         lReturnCode = 1; 
-    } */
+    }
 
     return lReturnCode; 
 }

@@ -1,6 +1,6 @@
 # Compiler and flags
 CC = gcc
-CFLAGS = -Wall -Wextra -O2 -I$(INC_DIR) -D_REENTRANT
+CFLAGS = -Wall -Wextra -O2 -fstack-usage -I$(INC_DIR) -D_REENTRANT
 DEBUGFLAGS = -Wall -Wextra -g
 LDFLAGS = -lpthread -lrt -lm
 
@@ -10,7 +10,7 @@ INC_DIR = Include
 RELEASE_DIR = Release
 
 # Source files
-SRCS = main.c Source/ThreadHandler.c
+SRCS = main.c Source/ThreadHandler.c Source/ThreadService.c Source/PthreadCore.c
 
 # Flatten object names
 OBJS_RELEASE = $(addprefix $(RELEASE_DIR)/, $(notdir $(SRCS:.c=.o)))

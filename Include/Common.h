@@ -29,8 +29,20 @@
 //******************************* Global Types ******************************** 
  
 //***************************** Global Constants ****************************** 
-
+#define POLLER_THREAD       "Poller_Thread"
+#define TRANSPORT_THREAD    "Transport_Thread"
+#define LOGGER_THREAD       "Logger_Thread"
+#define SUCCESS_RETURN      0
+#define MSG_QUEUE_ERR       -1
 //***************************** Global Variables ****************************** 
+typedef struct _THREAD_CONFIG_
+{
+    pthread_t* pulThreadId;     
+    void* (*ThreadHandler)(void*); 
+    const char* pcThreadName;
+    uint32_t ulStackSize;    
+    uint8_t  ucPriority;
+} THREAD_CONFIG;
 
 //**************************** Forward Declarations *************************** 
 
